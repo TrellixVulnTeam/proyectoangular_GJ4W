@@ -1,4 +1,6 @@
+<!-- navbar -->
 <app-mynavbar></app-mynavbar>
+<!-- toolbar menú -->
 <mat-toolbar >
     <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon *ngIf="!sidenav.opened">
@@ -8,49 +10,62 @@
             close
         </mat-icon>
     </button>
-    <br>
     <h4>Menú</h4>
 </mat-toolbar>
-
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
-       <button mat-button class="menu-button">
+       <button mat-button class="menu-button" (click)="toggleMenu1()">
             <mat-icon>important_devices</mat-icon>
-            <span>Producto</span>
+            <span>Productos</span>
+            <mat-icon *ngIf="!showmenu1">chevron_right</mat-icon>
+            <mat-icon *ngIf="showmenu1">expand_more</mat-icon>
        </button>
-       <button mat-button class="menu-button">
+       <mat-nav-list class="sidenav-submenu" *ngIf="showmenu1">
+        <a mat-list-item > Electrodomésticos</a>
+        <a mat-list-item > Periféricos</a>
+        <a mat-list-item > Hardware</a>
+        <a mat-list-item > Tecnología</a>
+      </mat-nav-list>
+       <button mat-button class="menu-button" (click)="toggleMenu2()">
             <mat-icon>movie</mat-icon>
             <span>Tutoriales</span>
+            <mat-icon *ngIf="!showmenu2">chevron_right</mat-icon>
+            <mat-icon *ngIf="showmenu2">expand_more</mat-icon>
         </button>
-        <button mat-button class="menu-button">
+        <mat-nav-list class="sidenav-submenu" *ngIf="showmenu2">
+            <a mat-list-item > Mantención</a>
+            <a mat-list-item > ¿Cómo puedo comprar? </a>
+            <a mat-list-item > Software </a>
+            <a mat-list-item > Hardware </a>
+        </mat-nav-list>
+        <button mat-button class="menu-button" (click)="toggleMenu3()">
             <mat-icon>credit_card</mat-icon>
             <span>Mis compras</span>
+            <mat-icon *ngIf="!showmenu3">chevron_right</mat-icon>
+            <mat-icon *ngIf="showmenu3">expand_more</mat-icon>
         </button>
-        <button mat-button class="menu-button">
+        <mat-nav-list class="sidenav-submenu" *ngIf="showmenu3">
+            <a mat-list-item> Historial de compras  </a>
+            <a mat-list-item> Pedidos entregados    </a>
+            <a mat-list-item> Pedidos pendientes    </a>
+        </mat-nav-list>
+        <button mat-button class="menu-button" (click)="toggleMenu4()">
             <mat-icon>supervisor_account</mat-icon>
             <span>Asistencia Técnica</span>
+            <mat-icon *ngIf="!showmenu4">chevron_right</mat-icon>
+            <mat-icon *ngIf="showmenu4">expand_more</mat-icon>
         </button>
+        <mat-nav-list class="sidenav-submenu" *ngIf="showmenu4">
+            <a mat-list-item > Historial de reuniones </a>
+            <a mat-list-item > Reuniones pendientes </a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="col-md-10">
-            <div class="container" id="cabecera">
-                <!-- cabecera -->
-               <app-myhead></app-myhead>
-               </div>
-            <div class="container" id="inicio">
-                <!-- inicio-->
-                <app-myindex></app-myindex>
-            </div>
-            
+        <div class="col-md-20">
+            <!-- nueva pagina -->
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-
-
-
 <!-- footer-->
 <app-myfooter></app-myfooter> 
-<!-- nueva pagina -->
-<router-outlet></router-outlet>

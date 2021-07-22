@@ -12,6 +12,11 @@ export class AppComponent {
   title = 'appElcato';
   @ViewChild(MatSidenav)
   sidenav!:MatSidenav;
+  showmenu1!: boolean;
+  showmenu2!: boolean;
+  showmenu3!: boolean;
+  showmenu4!: boolean;
+
   
   constructor(private titleService: Title, private meta: Meta, private observer: BreakpointObserver){
     titleService.setTitle('ElCato Market Digital');
@@ -20,8 +25,26 @@ export class AppComponent {
     meta.addTag({name:'author', content:'Integrantes: Nicolás Espinoza, Benjamín Nuñez, Esteban Salas'}, true);
 
   }
+  ngOnInit(): void {
+    this.showmenu1=false;
+    this.showmenu2=false;
+    this.showmenu3=false;
+    this.showmenu4=false;
+   }
   ngAfterViewInit() {
     this.sidenav.mode='over';
   }
+  toggleMenu1() {
+    this.showmenu1= !this.showmenu1;
+ }
+ toggleMenu2() {
+  this.showmenu2 = !this.showmenu2;
+}
+toggleMenu3() {
+  this.showmenu3 = !this.showmenu3;
+}
+toggleMenu4() {
+  this.showmenu4 = !this.showmenu4;
+}
 
 }
