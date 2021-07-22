@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { MyloginComponent } from './mylogin/mylogin/mylogin.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {MatListModule} from '@angular/material/list';
     MyfooterComponent,
     MynavbarComponent,
     MymenuComponent,
+    MyloginComponent,
 
   ],
   imports: [
