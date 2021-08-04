@@ -7,4 +7,16 @@
       </div>
   </div>
 </header>
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators" >
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img [src]="image" alt="...">
+    </div>
+    <div class="carousel-caption">
+      <p >Tus componentes</p>
+      <p class="subcaption">en un solo lugar</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
 <app-myindex></app-myindex>

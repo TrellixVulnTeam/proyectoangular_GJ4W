@@ -3,6 +3,8 @@ import { Title, Meta } from '@angular/platform-browser';
 import { BreakpointObserver } from '@angular/cdk/layout'
 import { MatSidenav } from '@angular/material/sidenav';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,7 +20,7 @@ export class AppComponent {
   showmenu4!: boolean;
 
   
-  constructor(private titleService: Title, private meta: Meta, private observer: BreakpointObserver){
+  constructor (private titleService: Title, private meta: Meta, private observer: BreakpointObserver){
     titleService.setTitle('ElCato Market Digital');
     meta.updateTag({name:'viewport', content:'width=device-width, initial-scale=1, shrink-to-fit=no'});
     meta.addTag({name:'description', content:'Aplicación utilziada para la asignatura de Desarrollo de Frontend con Angular'}, true);
@@ -26,6 +28,7 @@ export class AppComponent {
 
   }
   ngOnInit(): void {
+
     this.showmenu1=false;
     this.showmenu2=false;
     this.showmenu3=false;
@@ -46,5 +49,7 @@ toggleMenu3() {
 toggleMenu4() {
   this.showmenu4 = !this.showmenu4;
 }
-
+products:  [] = [
+    
+  ]
 }

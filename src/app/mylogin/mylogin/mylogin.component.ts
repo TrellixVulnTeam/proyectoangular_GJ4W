@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-mylogin',
@@ -8,8 +8,11 @@ import { FormControl } from '@angular/forms';
 })
 export class MyloginComponent implements OnInit {
 
-  constructor() { }
 
+  constructor() { 
+
+  }
+  
   ngOnInit(): void {
   }
 

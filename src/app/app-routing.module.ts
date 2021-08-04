@@ -4,6 +4,7 @@ import { MyaboutComponent } from './myabout/myabout/myabout.component';
 import { MyheadComponent } from './myhead/myhead/myhead.component';
 import { MyindexComponent } from './myindex/myindex/myindex.component';
 import { MyloginComponent } from './mylogin/mylogin/mylogin.component';
+import { MyproductComponent } from './myproducts/myproduct/myproduct.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path:'login',
     component: MyloginComponent,
+  },
+  {
+    path:'products',
+    component: MyproductComponent,
   },
   {
     path:'',

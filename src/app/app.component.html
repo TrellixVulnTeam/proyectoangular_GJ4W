@@ -21,31 +21,27 @@
             <mat-icon *ngIf="showmenu1">expand_more</mat-icon>
        </button>
        <mat-nav-list class="sidenav-submenu" *ngIf="showmenu1">
-        <a mat-list-item > Electrodomésticos</a>
-        <a mat-list-item > Periféricos</a>
-        <a mat-list-item > Hardware</a>
-        <a mat-list-item > Tecnología</a>
+        <a mat-list-item [routerLink]= "['products']">Modificar productos</a>
+
       </mat-nav-list>
-       <button mat-button class="menu-button" (click)="toggleMenu2()">
+       <button mat-button class="menu-button" (click)="toggleMenu2()" >
             <mat-icon>movie</mat-icon>
             <span>Tutoriales</span>
             <mat-icon *ngIf="!showmenu2">chevron_right</mat-icon>
             <mat-icon *ngIf="showmenu2">expand_more</mat-icon>
         </button>
         <mat-nav-list class="sidenav-submenu" *ngIf="showmenu2">
-            <a mat-list-item > Mantención</a>
-            <a mat-list-item > ¿Cómo puedo comprar? </a>
-            <a mat-list-item > Software </a>
-            <a mat-list-item > Hardware </a>
+            <a mat-list-item > Listado de tutoriales</a>
+            <a mat-list-item > Sugerencias </a>
+
         </mat-nav-list>
         <button mat-button class="menu-button" (click)="toggleMenu3()">
             <mat-icon>credit_card</mat-icon>
-            <span>Mis compras</span>
+            <span>Compras realizadas</span>
             <mat-icon *ngIf="!showmenu3">chevron_right</mat-icon>
             <mat-icon *ngIf="showmenu3">expand_more</mat-icon>
         </button>
         <mat-nav-list class="sidenav-submenu" *ngIf="showmenu3">
-            <a mat-list-item> Historial de compras  </a>
             <a mat-list-item> Pedidos entregados    </a>
             <a mat-list-item> Pedidos pendientes    </a>
         </mat-nav-list>
@@ -56,7 +52,6 @@
             <mat-icon *ngIf="showmenu4">expand_more</mat-icon>
         </button>
         <mat-nav-list class="sidenav-submenu" *ngIf="showmenu4">
-            <a mat-list-item > Historial de reuniones </a>
             <a mat-list-item > Reuniones pendientes </a>
         </mat-nav-list>
     </mat-sidenav>
